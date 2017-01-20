@@ -1,0 +1,196 @@
+@font-face {
+    font-family: ChinaCyr; 
+    src: url(../fonts/ChinaCyr.ttf);
+   }
+
+.congtrat{
+font-family: 'ChinaCyr', cursive;
+font-size: 25px;
+}
+
+
+#IPage{
+    width: 80%;
+    min-width: 600px;
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: center;
+}
+
+#IPage2{
+    width: 80%;
+    min-width: 600px;
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#IPage p{
+    font-family: agaramond,garamond,times,serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+#IPage_Buttons{
+    text-align: center;
+}
+
+hr.style-three {
+    width: 40%;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+hr.style-three:before {
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+#MainButtion{
+    position: absolute;
+    top: 45px;
+    left: 90%;
+    background: url('http://fe.it-academy.by/Projects/Kulishov_JSE/img/icons/Home.png') no-repeat;
+    width: 28px;
+    height: 28px;
+    color: #fff;
+    border: 0px;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+}
+
+#MainButtion:hover {
+    border:1px solid gray;
+}
+
+.mainButtons{
+    background:    #7f6000;
+    background:    -webkit-linear-gradient(#7f6000, #6aa84f);
+    background:    linear-gradient(#7f6000, #6aa84f);
+    border-radius: 5px;
+    color:         #fff;
+    display:       inline-block;
+    padding:       8px 35px;
+    font:          normal 700 24px/1 "Calibri", sans-serif;
+    text-align:    center;
+}
+
+.mainButtons:hover{
+    background:    #bf9000;
+    background:    -webkit-linear-gradient(#bf9000, #93c47d);
+    background:    linear-gradient(#bf9000, #93c47d);
+    border-radius: 5px;
+    color:         #fff;
+    display:       inline-block;
+    padding:       8px 35px;
+    font:          normal 700 24px/1 "Calibri", sans-serif;
+    text-align:    center;
+    text-shadow:   none;
+}
+
+.ScoreName{
+    font-family: "Comic Sans MS";
+    font-size: 18px;
+}
+
+.ScoreScore{
+    font-family: "Comic Sans MS";
+    font-size: 18px;
+}
+
+h1 {
+    font-family: agaramond,garamond,times,serif;
+    font-style: italic;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-align: center;
+}
+
+h2 {
+    font-family: agaramond,garamond,times,serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+    text-align: center;
+    }
+
+h3 {
+    font-family: times,garamond,serif;
+    font-size: 16px;
+    color: #ffffff;
+}
+.score,.settingslabel {
+    font-family: Rosaria, arial,helvetica,sans-serif;
+    font-size: 12px;
+    color: #ffffff;
+}
+.settingsSelect {
+    font-family: arial,helvetica,sans-serif;
+    font-size: 12px;
+    color: #000000;
+    background:#CED1D3;
+}
+.settingsOption {
+    font-family: arial,helvetica,sans-serif;
+    font-size: 12px;
+    color: #000000;
+}
+.gameButton {
+    font-family: arial,helvetica,sans-serif;
+    font-size: 12px;
+}
+.cookieText {
+    font-family: arial,helvetica,sans-serif;
+    font-size: 12px;
+    color: #000000;
+    }
+.textflow {
+    font-family: arial,helvetica,sans-serif;
+    font-size: 12px;
+    color: #ffffff;
+    line-height: 15px;
+}
+.sitelink,a.sitlink,a.sitelink:link,a.sitelink:visited {
+    font-family: arial,helvetica,sans-serif;
+    font-size: 12px;
+    color: #ffffff;
+    text-decoration: underline;
+}
+a.sitelink:hover {
+    color: #ccffff;
+    text-decoration: underline;
+}
+a.sitelink:active {
+    color: #c02020;
+    text-decoration: underline;
+}
+.pagelink,a.sitlink,a.pagelink:link,a.pagelink:visited,a.pagelink:hover {
+    font-family: arial,helvetica,sans-serif;
+    font-size: 12px;
+    color: #ccffff;
+    text-decoration: underline;
+}
+a.pagelink:active {
+    color: #c02020;
+    text-decoration: underline;
+}
+.lh17 {
+    line-height: 17px;
+}
+div#mahjongboard *
+{
+    -ms-content-zooming: none;
+    -ms-touch-action: none;
+    touch-action: none;
+}

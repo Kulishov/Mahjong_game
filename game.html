@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html><head><meta charset=UTF-8><title>*** unnamed text ***</title></head><body>
+<div>
+
+<center>
+    <center>
+        <table border="0" cellspacing="0" cellpadding="1" width="600">
+            <tr><td height="410">&nbsp;</td></tr>
+            <tr>
+                <td align="center">
+                    <form name="mahjongsettings" onsubmit="return false">
+                        <input value="&nbsp; Новая игра &nbsp;" type="button" onclick="newGame(); if (this.blur) this.blur();" class="gameButton">
+                        &nbsp;
+                        <input value="&nbsp; Перемешать &nbsp;" type="button" onclick="reshuffle(); if (this.blur) this.blur();" class="gameButton">
+                        &nbsp;
+                        <input value="&nbsp; Отменить ход &nbsp;" type="button" onclick="undoMove(); if (this.blur) this.blur();" class="gameButton">
+                        &nbsp;
+                        <input value="&nbsp; Сохранить игру &nbsp;" type="button" onclick="SaveGame()" class="gameButton">
+                        &nbsp;
+                        <input value="&nbsp; Продолжить игру &nbsp;" type="button" onclick="LoadLastGame()" class="gameButton">
+
+                        <table border="0" cellspacing="0" cellpadding="5">
+                            <tr><td height="30" class="settingslabel">&nbsp;</td></tr>
+                            <tr><td>
+                                <table border="0" cellspacing="0" cellpadding="3">
+                                    <tr valign="middle">
+                                        <td class="settingslabel">&nbsp;</td>
+                                        <td class="settingslabel" nowrap>Схема раскладки</td>
+                                        <td id='selectionLay'>
+                                                  <script> writeLayoutSelector() </script>
+                                        </td>
+                                        <td class="settingslabel">&nbsp;&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            </tr>
+                        </table>
+                    </form>
+                </td>
+            </tr>
+        </table>
+</center>
+</center>
+</div>
+ <script>
+writeBoard()
+mahjongInit()
+
+</script>
+
+
+<!--<audio id='player' src="media/Chines_health_liver.mp3" volume=0.4></audio>-->
+
+</body></html>

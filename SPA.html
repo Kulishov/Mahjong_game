@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html><head><meta charset=UTF-8><title>*** unnamed text ***</title></head><body>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link href="style/style.css" rel="stylesheet">
+<script src="script/script_game.js"></script>
+
+
+</head>
+
+<body bgcolor="#F4A460">
+<h2>Китайский спортивный маджонг</h2>
+<img src="http://fe.it-academy.by/Projects/Kulishov_JSE/img/icons/Mute.png" width="25px" style="position: absolute; top: 80px; left: 90%;" id="MusicButton" onclick="MusicControl()">
+<div id='IPage'></div>
+<hr class="style-three">
+<div id="IPage2"></div>
+<div id="IPage_Buttons">
+<input id='MainButtion' type=button onclick="SwitchToMain()">
+<input class="mainButtons" type=button value='Играть' onclick="SwitchToGame()">
+<input class="mainButtons" type=button value='Правила' onclick='SwitchToRules()'>
+<input class="mainButtons" type=button value='Рекодры' onclick='SwitchToRecords()'>
+</div>
+
+<audio id='player' src='http://fe.it-academy.by/Projects/Kulishov/media/Chines_health_liver.mp3' volume=0.3></audio>
+<script>
+
+   window.onhashchange=SwitchToStateFromURLHash;
+   var SPAStateH={};
+   function SwitchToStateFromURLHash()
+    {
+        var URLHash=window.location.hash;
+        var StateStr=URLHash.substr(1);
+
+        if ( StateStr!="" )
+        {
+            var PartsA=StateStr.split("_")
+            SPAStateH={ pagename: PartsA[0] };
+        }
+        else
+            SPAStateH={pagename:'Main'};
+
+        // обновляем вариабельную часть страницы под текущее состояние
+        var PageHTML="";
+        switch ( SPAStateH.pagename )
+        {
+            case 'Main':
+                PageHTML+="<img src='http://fe.it-academy.by/Projects/Kulishov_JSE/img/icons/logo.png' style='width: 50%'>"
+                document.getElementById('IPage').innerHTML=''
+                break;
+
+            case 'Game':
+                    document.getElementById('IPage').innerHTML=''
+                    document.getElementById('IPage2').innerHTML=' '
+                    TestLoadData2()
+                    function TestLoadData2() {
+                    $.get('game.html',function(data){
+                    $('#IPage').append(data);
+                    });
+                    }
+                setUp()
+                break;
+
+            case 'Rules':
+                PageHTML+="<p>Тут должны быть правила</p>";
+                document.getElementById('IPage').innerHTML=''
+                TestLoadData1()
+                    function TestLoadData1() {
+                        $.get('Rules.html',function(data){
+                        $('#IPage').append(data);
+                        });
+                    }
+                break;
+            case 'Liders':
+                ShowMessages()
+                break;
+        }
+        document.getElementById('IPage2').innerHTML=PageHTML;
+
+    }
+
+    // устанавливает в закладке УРЛа новое состояние приложения
+    // и затем устанавливает+отображает это состояние
+    function SwitchToState(NewStateH)
+    {
+        // устанавливаем закладку УРЛа
+        // нужно для правильной работы кнопок навигации браузера
+        // (т.к. записывается новый элемент истории просмотренных страниц)
+        // и для возможности передачи УРЛа другим лицам
+        var StateStr=NewStateH.pagename;
+        location.hash=StateStr;
+
+        // АВТОМАТИЧЕСКИ вызовется SwitchToStateFromURLHash()
+        // т.к. закладка УРЛа изменилась (ЕСЛИ она действительно изменилась)
+    }
+
+    function SwitchToGame()
+    {
+        SwitchToState( { pagename:'Game' } );
+    }
+
+    function SwitchToRules()
+    {
+        SwitchToState( { pagename:'Rules' } );
+    }
+
+    function SwitchToRecords()
+    {
+        SwitchToState( { pagename:'Liders' } );
+        document.getElementById('IPage').innerHTML="<p>Таблица Лидеров</p>"
+        RefreshMessages()
+        ShowMessages()
+    }
+
+    function  SwitchToMain()
+    {
+        SwitchToState( { pagename:'Main' } );
+    }
+    // переключаемся в состояние, которое сейчас прописано в закладке УРЛ
+    SwitchToStateFromURLHash();
+
+   function TestLoadData() {
+       $('#IPage2').load("Rules.html")
+   }
+
+</script>
+</body>
+</html>
+</body></html>
